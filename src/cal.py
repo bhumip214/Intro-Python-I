@@ -22,3 +22,13 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+if len(sys.argv) == 1:
+    calendar.TextCalendar(0).prmonth(datetime.now().year, datetime.now().month)
+elif len(sys.argv) == 2:
+    calendar.TextCalendar(0).prmonth(datetime.now().year, int(sys.argv[1]))
+elif len(sys.argv) == 3:
+    calendar.TextCalendar(0).prmonth(int(sys.argv[2]), int(sys.argv[1]))
+else:
+    print("Please enter month and/or year as integer")
+    exit()
